@@ -1,3 +1,8 @@
+#' ---
+#' title: Training Testing Analyses.R
+#' subtitle: This script computes results from the **Training and testing analyses** section and **Table 3** in the manuscript.
+#' ---
+
 #Install required packages
 
 library(tree); library(randomForest); library(VSURF)

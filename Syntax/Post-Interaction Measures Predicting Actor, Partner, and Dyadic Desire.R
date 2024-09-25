@@ -1,3 +1,8 @@
+#' ---
+#' title: Post-Interaction Measures Predicting Actor, Partner, and Dyadic Desire.R
+#' subtitle: This script computes results from the **Subsidiary random forests analyses** section and **Table 4** in the manuscript.
+#' ---
+
 library(tree); library(randomForest)
 library(VSURF)
 

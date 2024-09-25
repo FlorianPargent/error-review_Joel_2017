@@ -1,3 +1,8 @@
+#' ---
+#' title: Background Measures Predicting Dyadic Desire.R
+#' subtitle: This script computes results from the **Random forests results** section and **Table 2** in the manuscript.
+#' ---
+
 library(tree); library(randomForest)
 library(VSURF)
 

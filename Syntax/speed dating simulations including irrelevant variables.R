@@ -1,3 +1,8 @@
+#' ---
+#' title: speed dating simulations including irrelevant variables.R
+#' subtitle: This script computes results from the **Subsidiary random forests analyses** section in the manuscript and **Table S17** in the Supplemental Material.
+#' ---
+
 #Install required packages
 require(MASS)
 require(plyr)

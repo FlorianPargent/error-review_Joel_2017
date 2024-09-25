@@ -1,3 +1,8 @@
+#' ---
+#' title: Background Measures Predicting Partner Desire.R
+#' subtitle: This script computes results from the **Random forests results** section and **Table 2** in the manuscript.
+#' ---
+
 library(tree); library(randomForest)
 library(VSURF)
 
