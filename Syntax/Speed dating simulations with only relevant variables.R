@@ -186,7 +186,14 @@ modelgroup_means <- rbind((colMeans(variance_frame5)),(colMeans(variance_frame6)
 write.csv(modelgroup_means, file="simulated speed data summary all models, Jan 12 2017.csv", row.names=TRUE)
 
 
-
+#' ::: {.callout-note}
+#' ## This code was added as part of the ERROR review
+#' The following code shows the results that are included in Table S16 of the manuscript
+#' ```{r}
+#' Table_S16_data <- read.csv("simulated speed data summary all models, Jan 12 2017.csv")
+#' Table_S16_data
+#' ```
+#' :::
 
 
 

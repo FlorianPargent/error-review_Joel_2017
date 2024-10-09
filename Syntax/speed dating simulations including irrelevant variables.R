@@ -221,8 +221,14 @@ modelgroup_means.complex <- rbind((colMeans(variance_frame5.comp)),(colMeans(var
 
 write.csv(modelgroup_means.complex, file="simulated speed data summary all complex models, January 14 2017.csv", row.names=TRUE)
 
-
-
+#' ::: {.callout-note}
+#' ## This code was added as part of the ERROR review
+#' The following code shows the results that are included in Table S17 of the manuscript
+#' ```{r}
+#' Table_S17_data <- read.csv("simulated speed data summary all complex models, January 14 2017.csv")
+#' Table_S17_data
+#' ```
+#' :::
 
 
 
