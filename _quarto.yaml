@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.{qmd,R}"
+    
+website:
+  title: "ERROR review or Joel et al. (2017)"
+  navbar:
+    tools:
+      - icon: github
+        href: https://florianpargent.github.io/error-review_Joel_2017/
+
+execute:
+  freeze: false
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

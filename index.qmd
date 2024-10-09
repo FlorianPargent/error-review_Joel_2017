@@ -1,0 +1,66 @@
+---
+title: "Reproducibility check for the ERROR review of Joel et al. (2017): Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction"
+author: "Florian Pargent"
+format: html
+date: today
+date-format: iso
+bibliography: bibliography.bib
+---
+
+# Introduction
+
+This website contains supplementary online materials for the [ERROR review](https://error.reviews/reviews/joel-et-al-2017/) of @joel_2017: *Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction*.
+
+In the following, I present the results of a reproducibility check in which I did rerun the original R scripts provided by @joel_2017. For the reproducibility check, I proceeded as follows:
+
+- I used the original R scripts from the `Syntax/` folder downloaded from  
+<http://reshare.ukdataservice.ac.uk/852716/>
+- I also downloaded the `Data/` folder but did not include the data files in my Github repository. To run the computations without changing the code in the syntax files, I had to place all data files from `Data/` into the `Syntax/` folder.
+- Because the original software versions were not documented by the authors in their public resources, I used current versions of all R packages and documented all versions in a *renv.lock* file. Because of different software versions than the original, my results cannot be expected to be numerically similar to the published results. Even in the unlikely scenario that the used R packages did not introduce any changes to their methodology since their previous versions, the fact that the seed algorithm for random number generation was changed in R version 3.6.0 (published in 2019), means that no numerical computations that involve random number generation can be exactly reproduced by my results. Therefore, my analyses could perhaps be better described as a robustness check, because the results of the analyses should not qualitatively differ with new random numbers or minor changes to the statistical algorithms.
+- The complete workflow is documented by the *commit messages* in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
+
+Finally, I document some (potential) errors I have found while examining the data and the code during my ERROR review.
+
+# Rerun original R scripts
+
+## Random forests results
+
+The following R scripts compute the results from the **Random forests results** section and **Table 2** in the manuscript.
+
+- [Background Measures Predicting Actor Desire.R](Syntax/Background Measures Predicting Actor Desire.R)
+
+- [Background Measures Predicting Partner Desire.R](Syntax/Background Measures Predicting Partner Desire.R)
+
+- [Background Measures Predicting Dyadic Desire.R](Syntax/Background Measures Predicting Dyadic Desire.R)
+
+## Training and testing analyses
+
+The following R script computes the results from the **Training and testing analyses** section and **Table 3** in the manuscript.
+
+- [Training Testing Analyses.R](Syntax/Training Testing Analyses.R)
+
+## Subsidiary random forests analyses
+
+The following R scripts compute the results from the **Subsidiary random forests analyses** section and **Table 4** in the manuscript, as well as **Table S16** and **Table S17** in the Supplemental Material.
+
+- [Post-Interaction Measures Predicting Actor, Partner, and Dyadic Desire.R](Syntax/Post-Interaction Measures Predicting Actor, Partner, and Dyadic Desire.R)
+
+- [Speed dating simulations with only relevant variables.R](Syntax/Speed dating simulations with only relevant variables.R)
+
+- [speed dating simulations including irrelevant variables.R](Syntax/speed dating simulations including irrelevant variables.R)
+
+# Document errors found during the ERROR review
+
+In the following R script I document the errors that I found during my ERROR review.
+
+- [Document Errors.R](Syntax/Document Errors.R)
+
+# R and package versions
+
+The concrete versions of R and all packages I used for the reproducibility check are documented in the *renv.lock* file in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
+Additionally, I print the `sessionInfo()` here:
+
+```{r}
+sessionInfo()
+```
+
