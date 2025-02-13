@@ -1,27 +1,34 @@
 ---
-title: "Reproducibility check for the ERROR review of Joel et al. (2017): Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction"
+title: "Re-execution reproduction for the ERROR review of Joel et al. (2017): Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction"
 author: "Florian Pargent"
 format: html
 date: today
 date-format: iso
 bibliography: bibliography.bib
+csl: apa.csl
 ---
 
-# Introduction
+# Introduction and Methods
 
-This website contains supplementary online materials for the [ERROR review](https://error.reviews/reviews/joel-et-al-2017/) of @joel_2017: *Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction*.
+This website contains supplementary online materials for the [ERROR review](https://error.reviews/reviews/joel-et-al-2017/) of:
 
-In the following, I present the results of a reproducibility check in which I did rerun the original R scripts provided by @joel_2017. For the reproducibility check, I proceeded as follows:
+::: {.callout-note title="" appearance="minimal"}
+Joel, S., Eastwick, P. W., & Finkel, E. J. [-@joel_2017]. Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction. *Psychological Science*, 28(10), 1478-1489. <https://doi.org/10.1177/0956797617714580>
+:::
 
-- I used the original R scripts from the `Syntax/` folder downloaded from  
-<http://reshare.ukdataservice.ac.uk/852716/>
-- I also downloaded the `Data/` folder but did not include the data files in my Github repository. To run the computations without changing the code in the syntax files, I had to place all data files from `Data/` into the `Syntax/` folder.
-- Because the original software versions were not documented by the authors in their public resources, I used current versions of all R packages and documented all versions in a *renv.lock* file. Because of different software versions than the original, my results cannot be expected to be numerically similar to the published results. Even in the unlikely scenario that the used R packages did not introduce any changes to their methodology since their previous versions, the fact that the seed algorithm for random number generation was changed in R version 3.6.0 (published in 2019), means that no numerical computations that involve random number generation can be exactly reproduced by my results. Therefore, my analyses could perhaps be better described as a robustness check, because the results of the analyses should not qualitatively differ with new random numbers or minor changes to the statistical algorithms.
-- The complete workflow is documented by the *commit messages* in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
+For the ERROR review, I performed a **re-execution reproduction** [@kohrt_2024] in which I did rerun the original R scripts provided by @joel_2017. For the reproduction, I proceeded as follows:
 
-Finally, I document some (potential) errors I have found while examining the data and the code during my ERROR review.
+- **Source Code:** I used the original R scripts from the `Syntax/` folder downloaded from  
+<http://reshare.ukdataservice.ac.uk/852716/>. I did not make changes to the source code except for adding some [Quarto](https://quarto.org/) code to the beginning of each R script that allowed me to present the results of the computations on this website.
+- **Data:** I also downloaded the `Data/` folder from <http://reshare.ukdataservice.ac.uk/852716/> but did not include the data files in my [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017). To run the computations without changing the code in the syntax files, I had to place all data files from `Data/` into the `Syntax/` folder. The data files consist of anonymized pre-processed data collected from multiple data collections as documented in @joel_2017.
+- **Obstacles:** Because the original software versions were not documented by the authors in their public resources, I used current versions of all R packages and documented all versions in a [*renv.lock*](https://rstudio.github.io/renv/index.html) file. Because of different software versions than the original, my results *cannot* be expected to be numerically identical to the published results. However, the results of the reproduction can still be checked for consistency [@kohrt_2024] because the results of the computations should not qualitatively differ with new random numbers or minor changes to the parameter settings of statistical algorithms.[^1] 
+- **Documentation:** The following sections of this website only document the numerical results of the re-executed computations. A full report of the reproduction, in which the consistency of the results is evaluated, is included in the final [ERROR review](https://error.reviews/reviews/joel-et-al-2017/). Additionally, the complete workflow of the reproduction is documented by the *commit messages* in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
 
-# Rerun original R scripts
+[^1]: Note that even in the unlikely scenario that the used R packages did not introduce any changes to their methodology since their previous versions ([which they did](https://cran.r-project.org/web/packages/VSURF/NEWS)), the fact that the seed algorithm for random number generation was changed in R version 3.6.0 (published in 2019), means that no numerical computations that involve random number generation can be exactly reproduced by my results. I also experimented with setting the random number generator to the old setting (`sample.kind = "Rounding"`, in `set.seed()`) but could not reproduce the original results.
+
+# Results from rerunning the original R scripts
+
+In the following sections, I present the numerical results of the re-execution reproduction. I only present the output of the original R scripts provided by the authors (with minimal reformating). A full report of the reproduction, in which the consistency of the results is evaluated, is included in the final [ERROR review](https://error.reviews/reviews/joel-et-al-2017/).
 
 ## Random forests results
 
@@ -49,15 +56,15 @@ The following R scripts compute the results from the **Subsidiary random forests
 
 - [speed dating simulations including irrelevant variables.R](Syntax/speed dating simulations including irrelevant variables.R)
 
-# Document errors found during the ERROR review
+# Document inconsistencies {#sec-inconsistencies}
 
-In the following R script I document the errors that I found during my ERROR review.
+In the following R script I document some minor inconsistencies I found while examining the data and the source code.
 
-- [Document Errors.R](Syntax/Document Errors.R)
+- [Document Inconsistencies.R](Syntax/Document Inconsistencies.R)
 
 # R and package versions
 
-The concrete versions of R and all packages I used for the reproducibility check are documented in the *renv.lock* file in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
+The concrete versions of R and all packages I used for the re-execution reproduction are documented in the *renv.lock* file in the underlying [Github repository](https://github.com/FlorianPargent/error-review_Joel_2017).
 Additionally, I print the `sessionInfo()` here:
 
 ```{r}

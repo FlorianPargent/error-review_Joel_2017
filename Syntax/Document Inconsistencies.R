@@ -1,10 +1,10 @@
 #' ---
-#' title: Document Errors.R
+#' title: Document Inconsistencies.R
 #' author: Florian Pargent
-#' subtitle: This script documents errors I detected during my ERROR review
+#' subtitle: This script documents some minor inconsistencies I detected during the reproduction
 #' ---
 
-#' ## 1. Missing gender value in testset 
+#' ## Missing gender value in testset 
 #' The manuscript states that the testset data *"Sample B consisted of 187 undergraduate students (93 women and 94 men; mean age = 19.6 years, SD = 1.2)"*.
 #' However, in the two data files *Testing actor.csv* and *Testing partner.csv* (which both contain the predictor variable `Gender`), one gender value is missing.
 #' Either the reported descriptive gender statistics in the manuscript are incorrect, or the missing data point in the testing datasets is incorrect.
